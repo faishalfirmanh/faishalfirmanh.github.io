@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+Template Name: Hoppler
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>programing</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="tutorial join mysql">
+<meta name="keywords" content="mysql, php, join">
+<meta name="author" content="faisal">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<style type="text/css">
+#sec1{
+  /* height: auto; */
+  background-image:url('images/demo/backgrounds/jus2.jpg');
+}
+html{
+  scroll-behavior: smooth;
+}
+</style>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/code.png');">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">Kopler ;D</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="#sec1">tentang</a></li>
+          <li><a class="drop" href="#">bola</a>
+            <ul>
+              <li><a href="Bola1.html">Gallery</a></li>
+              <li><a href="gallery.html">Full Width</a></li>
+              <li><a href="gallery.html">Sidebar Left</a></li>
+              <li><a href="gallery.html">Sidebar Right</a></li>
+              <li><a href="gallery.html">Basic Grid</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">programming</a>
+            <ul>
+            <li><a href="Prog1.html">Query join</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <section id="breadcrumb" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <ul>
+
+    </ul>
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+  </section>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first">
+      <!-- ################################################################################################ -->
+
+
+      <div class="sdb_holder">
+
+      </div>
+      <div class="sdb_holder">
+
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="content three_quarter">
+      <!-- ################################################################################################ -->
+      <h1>Query join mysql lebih dari 2 tabel</h1>
+      <img class="imgr borderedbox inspace-5" src="../images/demo/db0.png" alt="">
+      <p>Database mysqli merupakan Database yang sering digunakan oleh para pengembang, baik yang masih pemula, maupun dalam bentuk real projek, mengenai macam macam query mysql yang akan dibahas disini adalah <a href="http://www.mysqltutorial.org/mysql-join/"><b>JOIN</b></a></p>
+      <p>join memiliki 3 macam inner, right dan left, pada tulisan ini akan dibahas mengenai inner join,sebelumnya di bawah ini gambar perbedaannya</p>
+      <img class="imgl borderedbox inspace-5" src="../images/demo/penjelasan.png" alt="">
+      <ol>
+        <li><p>langah pertama buatlah sebuah tabel dengan contoh gambar1, atau copas script dibawah ini, haru satu satu</p><br></li>
+      <textarea readonly rows="6" cols="80"> CREATE TABLE `pengunjung` ( `idPengunjung` int(11) NOT NULL AUTO_INCREMENT, `nama` varchar(20) NOT NULL, `usia` int(11) NOT NULL, `alamat` varchar(20) NOT NULL, PRIMARY KEY(idPengunjung))
+       CREATE TABLE `tiket` ( `idTiket` int(11) NOT NULL AUTO_INCREMENT, `idPengunjung` int(10) NOT NULL, `idJenisTiket` int(11) NOT NULL, `tujuan` varchar(20) NOT NULL, PRIMARY KEY(idTiket))
+      CREATE TABLE `jenistiket` ( `idJenis` int(11) NOT NULL AUTO_INCREMENT, `namaTiket` varchar(20) NOT NULL, `harga` decimal(10) NOT NULL, PRIMARY KEY(idJenis) )</textarea>
+      <li><p>masukkan data tabel pengujung seperti dibawah ini</p></li>
+        <img class="imgl borderedbox inspace-5" src="../images/demo/pengunjung.png" alt="">
+        <li><p>isi tabel jenis</p>  <img class="imgl borderedbox inspace-5" src="../images/demo/jenis.png" alt=""></li>
+        <li>buat relasi di database, pada tabel tiket->structure->relation view <img class="imgl borderedbox inspace-5" src="../images/demo/db1.png" alt=""><p>pertama hubungkan 1 tabel kolom dulu, lalu <b>save</b>, dilanjutkan menghungkan kolom berikutnya</p></li>
+        <li>ketika seluruh kolom sudah terhubung, lalu inputkan data pada tabel tiket <img class="imgl borderedbox inspace-5" src="../images/demo/db2.png" alt=""></li>
+          <p>ketika insert pada kolom pengunjung dan jenis tiket, otomatis akan muncul keterangan dan idnya, tapi yang disimpan nanti berupa id saja.</p>
+          <img class="imgl borderedbox inspace-5" src="../images/demo/db3.png" alt=""><p>setelah data ditambahkan, maka yang disimpan adalah id dari tabel utama <b>tblpengujung</b> dan <b>tbljenistiket</b> </p>
+        <li>lalu bagaimana cara menampilakn <b>nama pengujung</b> dan <b>jenis tiket</b>sedangkan yang disimpan saja berupa id, ini guna query join</li>
+      </ol>
+      <p>gunakan qury dibawah ini </p>
+      <p><hr>SELECT tiket.idTiket, pengunjung.nama <mark>as</mark> 'nama pemesan', jenistiket.namaTiket as 'kategori tiket', tujuan FROM tiket JOIN <b style="color:blue">pengunjung</b> on tiket.idPengunjung = <b style="color:blue">pengunjung</b>.idPengunjung JOIN <b style="color:rgb(16,180,37)">jenistiket</b> on tiket.idJenisiket = <b style="color:rgb(16,180,37)">jenistiket</b>.idJenis <mark>ORDER BY</mark> hargahr <hr></p>
+      <p>maka akan terlihat tampilan seperti dibawah ini :  <img class="imgr borderedbox inspace-5" src="../images/demo/db4.png" alt=""></p>
+    <p><mark>as</mark>: alias digunakan untuk menamai kolom sesuai yang kita inginkan, <mark>order by</mark> : dugunakan untuk mengurutkan disitu order by harga, secara default kalau tidak diset ya mengurutkan terkecil ke terbesar</p>
+
+      <p>lalu bagaimana cara menampilkan ke dalam format php</p><br><p>copy script dibawah ini , lalu save dan refresh dibrowser anda</p>
+      <textarea name="name" rows="20" cols="80">
+        <?php
+          $servername = "localhost";
+          $username = "root";
+          $password = ""; //karena tidak pake password saya kosongi
+          $dbname = "soaldb"; //nama databasemu
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error); //cek koneksi sudah sukses atau belum
+          }
+          echo "Connected successfully <br>";
+
+          $sql = "SELECT tiket.idTiket, pengunjung.nama as 'nama pemesan', jenistiket.namaTiket as 'kategori tiket', tujuan, jenistiket.harga FROM tiket JOIN pengunjung on tiket.idPengunjung = pengunjung.idPengunjung JOIN jenistiket on tiket.idJenisiket = jenistiket.idJenis ORDER BY harga";
+
+          $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          // output data of each row
+          while($row = $result->fetch_assoc()) {
+              echo "idtiket: " . $row["idTiket"]. " -/nama pengunjung: " . $row["nama pemesan"]."| kategori tiket :" .$row["kategori tiket"] . "| tujuan :". $row["tujuan"] . "harga ".$row["harga"]."<br>";
+          }
+      } else {
+          echo "0 results";
+
+      }
+      $conn->close();
+      ?>
+
+      </textarea>
+      <p>sekian trimakasih sudah bersedia membaca, semoga bermanfaat, kalau ada saran masukkan silahkan hubungi dilink tentang saya. trimakasih</p>
+
+      <div id="comments">
+
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4" id="sec1" style="background-image:url('../images/demo/backgrounds/kod.jpg');">
+  <footer id="footer" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div class="one_quarter" align="center" style="color:rgb(185,199,226)">
+      <h6 class="">Tentang saya <i class="fa fa-lg fa-home"></i></h6>
+        <article>
+          <img src="../images/demo/saya.jpg" alt="">
+        </article>
+        <ul class="nospace">
+        faishal firman hakim <br>
+        kec. dawarblandong, Mojokerto <br>
+        <br>
+
+        </ul>
+      </nav>
+
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://web.facebook.com/faisal.partenopei?ref=bookmarks"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://www.instagram.com/isal48utd_army/"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="faicon-vk" href="#"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
