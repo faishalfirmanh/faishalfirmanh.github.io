@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+Template Name: Hoppler
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>programing</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="tutorial event javascript html">
+<meta name="keywords" content="javascript, event, html">
+<meta name="keywords" content="jquery">
+<meta name="keywords" content="javascript">
+<meta name="keywords" content="Event">
+<meta name="author" content="faisal">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<style type="text/css">
+#sec1{
+  /* height: auto; */
+  background-image:url('images/demo/backgrounds/jus2.jpg');
+}
+html{
+  scroll-behavior: smooth;
+}
+</style>
+<script type="text/javascript">
+        function copy1() {
+        var copyText = document.getElementById("off");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+        }
+</script>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/code.png');">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">Kopler ;D</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="#sec1">tentang</a></li>
+          <li><a class="drop" href="#">bola</a>
+            <ul>
+              <li><a href="Bola1.html">Matchweek EPL 19</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">programming</a>
+            <ul>
+            <li><a href="Prog1.html">Query join</a></li>
+            <li><a href="Prog2.html">Mengenal Event di javascript</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <section id="breadcrumb" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <ul>
+
+    </ul>
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+  </section>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sidebar one_quarter first">
+      <!-- ################################################################################################ -->
+
+
+      <div class="sdb_holder">
+
+      </div>
+      <div class="sdb_holder">
+
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="content three_quarter">
+      <!-- ################################################################################################ -->
+      <h1>Event pada javascript</h1>
+      <img class="imgr borderedbox inspace-5" src="../images/demo/prog1.jpg" alt="">
+      <p>Bagi para developer web, javascript merupakan hal yang tidak bisa bisa dipisahkan terutama web desain, dengan js (javascript) dapat membuat tampilan web menjadi lebih interaktif</p>
+      <p>Salah satu yang saya suka dari js adalah dapat memainkan animasi,tulisan ini akan membahas mengenai <a href="https://www.tutorialspoint.com/javascript/javascript_events.htm">event</a>, event marupakan interaksi js dengan html ketika user melakukan manupulasi pada halaman atau memodif</p>
+      <!-- <img class="imgl borderedbox inspace-5" src="../images/demo/penjelasan.png" alt=""> -->
+      <p>berikut beberapa daftar event js, yang dapat membuatmu memodif halaman web</p>
+      <table>
+        <thead>
+          <th>Nama event</th>
+          <th>Penjelasan</th>
+          <th>Contoh script</th>
+        </thead>
+        <tr>
+          <td>offline()</td>
+          <td>digunakan untuk mengecek apabila terhubung ke internet atau tidak</td>
+          <td><a href="#off">klik</a></td>
+        </tr>
+        <tr>
+          <td>onafterprint()</td>
+          <td>posisinya di tag body ketika dokument html di print(ctrl + p) akan memunculkan alert, bahwa dokument sedang diprint</td>
+          <td><a href="#aftrPrint">klik</a></td>
+        </tr>
+        <tr>
+          <td>onbeforeprint()</td>
+          <td>ketika dokument html ctrl+p sebelum di print akan memunculkan alert</td>
+          <td><a href="#beforPrint">klik</a></td>
+        </tr>
+        <tr>
+          <td>onbeforeload()</td>
+          <td>sebelum halaman di reload atau f5, akan menampilkan alert, atau saat di klik link</td>
+          <td><a href="#onBfLoad">klik</a></td>
+        </tr>
+        <tr>
+          <td>oncanplay() dan oncanplaythrough()</td>
+          <td>kedua event inihampir sama penepatan di tag video  oncanplay="namaFungsi",ketika menambahkan event ini dihtmk video dapat di paus, volume, dll seperti media player biasahnya</td>
+          <td><a href="#onplay">klik</a></td>
+        </tr>
+        <tr>
+          <td>onchange()</td>
+          <td>akan memberitau ketika text atau tindakan lain,ketika dirubah dengan muncul aret sesua yng kita mau</td>
+          <td><a href="#oncang">klik</a></td>
+        </tr>
+        <tr>
+          <td>onscroll()</td>
+          <td>mendeteksi jumlah scroll, uji coba di tag textarea</td>
+          <td><a href="onSkrol">klik</a></td>
+        </tr>
+        <tr>
+          <td>onmouseover()</td>
+          <td>ketika kursor mouse diletakkan di obyek, maka obyek dapat terlihat berubah atau sesuai dengan yang kita inginkan</td>
+          <td><a href="#onMos">klik</a></td>
+        </tr>
+        <tr>
+          <td>onmouseout()</td>
+          <td>ketika kursor mouse keluar dari obyek, maka obyek dapat terlihat berubah atau tetap sesuai dengan yang kita inginkan</td>
+          <td><a href="#onMos">klik</a></td>
+        </tr>
+      </table>
+    <div class="" id="off"> <p>online script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+            <html lang="en" dir="ltr">
+              <head>
+                <meta charset="utf-8">
+                <title></title>
+                <script type="text/javascript">
+                window.addEventListener('load', function() {
+            var status = document.getElementById("status");
+            var log = document.getElementById("log");
+
+            function updateOnlineStatus(event) {
+              var condition = navigator.onLine ? "online" : "offline";
+
+              status.className = condition;
+              status.innerHTML = condition.toUpperCase();
+
+              log.insertAdjacentHTML("beforeend", "Event: " + event.type + "; Status: " + condition);
+            }
+
+            window.addEventListener('online',  updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+            });
+                </script>
+              </head>
+              <body>
+                <style media="screen">
+                #status {
+            position: fixed;
+            width: 100%;
+            font: bold 1em sans-serif;
+            color: #FFF;
+            padding: 0.5em;
+            }
+
+            #log {
+            padding: 2.5em 0.5em 0.5em;
+            font: 1em sans-serif;
+            }
+
+            .online {
+            background: green;
+            }
+
+            .offline {
+            background: red;
+            }
+                </style>
+                <div id="status"></div>
+                <div id="log"></div>
+              </body>
+            </html>
+      </textarea>
+    </div>
+    <div class="" id="aftrPrint"> <p>onafterprint script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+          <!DOCTYPE html>
+          <html lang="en" dir="ltr">
+            <head>
+              <meta charset="utf-8">
+            <script type="text/javascript">
+            function Sebelumprint(){
+                    alert("apakah anda yakin mengeprint");
+                  }
+                  function akanPrint(){
+                    alert("halaman sedang diprint")
+                  }
+            </script>
+            </head>
+            <body onafterprint="akanPrint()">
+
+            </body>
+          </html>
+      </textarea>
+    </div>
+    <div class="" id="beforPrint"> <p>onbeforeprint script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+          <!DOCTYPE html>
+          <html lang="en" dir="ltr">
+            <head>
+              <script type="text/javascript">
+              function Sebelumprint(){
+                      alert("apakah anda yakin mengeprint");
+                    }
+                    function akanPrint(){
+                      alert("halaman sedang diprint")
+                    }
+              </script>
+            </head>
+            <body onbeforeprint="Sebelumprint()">
+
+            </body>
+          </html>
+      </textarea>
+    </div>
+    <img src="../images/demo/kobong.gif" alt="">
+    <div class="" id="onBfLoad"> <p>onbeforeload script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <script type="text/javascript">
+                  function onBerfor(){
+               return "Halloo sedang diloadd";
+                 }
+            </script>
+          </head>
+          <body onbeforeunload="return onBerfor()">
+            buat dulu file hasilload.php
+              <a href="Hasilload.php">klik disini</a>
+          </body>
+        </html>
+      </textarea>
+    </div>
+    <div class="" id="onplay"> <p>oncanplay and oncanplaythrough script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <script type="text/javascript">
+            function peringatanVideo(){
+                alert("apakan anda yakin play video");
+              }
+              function peringatanThout(){
+                alert("apakan anda thought  play video");
+              }
+            </script>
+          </head>
+          <body>
+              <video controls oncanplay="peringatanVideo()" src="../newElement/vid.mp4" width="500px" height="500px">
+          </body>
+        </html>
+      </textarea>
+    </div>
+    <div class="" id="onMos"> <p>Onmoseover dan close script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <script type="text/javascript">
+            function besar(x) {
+                  x.style.height = "464px";
+                  x.style.width = "464px";
+                }
+
+                function kecil(x) {
+                  x.style.height = "202px";
+                  x.style.width = "202px";
+                }
+            </script>
+          </head>
+          <body>
+            <img onmouseover="besar(this)" src="../jupiter.png" onmouseout="kecil(this)" width="202" height="202" alt="">
+          </body>
+        </html>
+      </textarea>
+    </div>
+    <div class="" id="oncang"> <p>onchange script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <script type="text/javascript" src="../jquery-latest.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function(){
+              $("input").change(function(){
+                alert("The text has been changed.");
+              });
+            });
+            </script>
+          </head>
+          <body>
+            <label for="">inputkan sesuatu lalu enter</label>
+            <input type="text">
+          </body>
+        </html>
+      </textarea>
+    </div>
+    <div class="" id="onSkrol"> <p>onscrol script dibawah ini</p>
+      <textarea name="name" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <script type="text/javascript">
+            window.onload= function(){
+                const textarea = document.querySelector('textarea');
+                const log = document.getElementById('log');
+                textarea.onscroll = logScroll;
+                function logScroll(e) {
+                log.textContent = `Scroll position: ${e.target.scrollTop}`;
+                }
+                }
+            </script>
+          </head>
+          <body>
+            <textarea style="width:4rem; height:20rem">adfa1 asdfasd  asdfasd2 adfa1 asdfasd
+            asdfasd2 adfa1 asdfasd  asdfasd2 adfa1 asdfasd  asdfasd2 adfa1 asdfasd
+            asdfasd2 adfa1 asdfasd  asdfasd2 adfa1 asdfasd  asdfasd2 adfa1 asdfasd  a
+            sdfasd2adfa1 asdfasd  asdfasd2adfa1 asdfasd  asdfasd2adfa1 asdfasd  asdfa
+            sd2 dsafasdf asdfa87 8b fduhasj f 7yuhfa ajfjasd 3 4 5 6 7 8 9</textarea>
+          <p id="log"></p>
+          </body>
+        </html>
+      </textarea>
+    </div>
+      <p>sebenarnya masih banyak sekali event di js, itu hanya sebagain, kalin coba coba saja sendir</p>
+      <p>sekian trimakasih sudah bersedia membaca, semoga bermanfaat, kalau ada saran masukkan silahkan hubungi dilink tentang saya. trimakasih</p>
+<p>thanks <a href="https://www.tutorialspoint.com/javascript/javascript_events.htm">brow</a></p>
+      <div id="comments">
+
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4" id="sec1" style="background-image:url('../images/demo/backgrounds/kod.jpg');">
+  <footer id="footer" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div class="one_quarter" align="center" style="color:rgb(185,199,226)">
+      <h6 class="">Tentang saya <i class="fa fa-lg fa-home"></i></h6>
+        <article>
+          <img src="../images/demo/saya.jpg" alt="">
+        </article>
+        <ul class="nospace">
+        faishal firman hakim <br>
+        kec. dawarblandong, Mojokerto <br>
+        <br>
+
+        </ul>
+      </nav>
+
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://web.facebook.com/faisal.partenopei?ref=bookmarks"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="https://www.instagram.com/isal48utd_army/"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="faicon-vk" href="#"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
