@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--
 Template Name: Hoppler
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
@@ -12,7 +12,9 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>bola</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript" src="Jadwal.js"></script>
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 .bak{
   background-color: rgba(214,252,121,.89);
@@ -28,31 +30,31 @@ html{
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
 
-<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/utdHeder.jpg');">
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/utdHeder.jpg');">
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="../index.html">Kopler ;D</a></h1>
+        <h1><a href="index.html">Kopler ;D</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="#sec1">tentang</a></li>
           <li><a class="drop" href="#">bola</a>
             <ul>
-              <li><a href="Bola1.html">Matchweek EPL 19</a></li>
-                <li><a href="../Jadwal.html">Jadwal Bola hari ini</a></li>
+              <li><a href="pages/Bola1.html">Matchweek EPL 19</a></li>
+                <li><a href="Jadwal.html">Jadwal Bola hari ini</a></li>
             </ul>
           </li>
           <li>
-            <a href="../Film.html">Cari Film</a>
+            <a href="Film.html">Cari Film</a>
           </li>
           <li><a class="drop" href="#">programming</a>
             <ul>
-              <li><a href="Prog1.html">Query join</a></li>
-                <li><a href="Prog2.html">Mengenal Event di javascript</a></li>
-                <li><a href="Prog3.html">Triger mysql, mengurangi stok barang</a></li>
+              <li><a href="pages/Prog1.html">Query join</a></li>
+                <li><a href="pages/Prog2.html">Mengenal Event di javascript</a></li>
+                <li><a href="pages/Prog3.html">Triger mysql, mengurangi stok barang</a></li>
             </ul>
           </li>
         </ul>
@@ -73,25 +75,8 @@ html{
 <!-- ################################################################################################ -->
 <div class="wrapper row3 bak">
   <main class="hoc container clear">
-    <div class="">
-    <h1>Ini Bererapa Catatan Matchweek primer league pekan ke 19</h1>
-
-<ol> catatan dibawah ini sangat menarik karena beberapa pemain berasal dari inggris.
-  <li>Jamie vardie tops skor sementara</li> <br>
-    <img class="" src="../images/demo/vardy.jpg" alt="">
-    <p>straiker asal inggris ini mampu memimpin sementara top skor, dengan perolehan 17, unggul 6 gol dari tammy abraham, dengan impresiv penamilan vardy musim ini mampu membawa licester menduduki peringkat 2 sementara</p>
-    <li>clean sheets dean henderson</li> <br>
-    <img class="" src="../images/demo/dean.jpg" alt="">
-    <p>goalkeeper berkebangsaan inggirs, ternayata produk dari Man. United, sekarang dipinjamkan di sheffield united, dia berhasil meraih clean seet sebanyak 7 kali, jumlah itu disamai oleh Nick pope dari burnly dan kasper schmeichel dari leichester, mengingat usianya yang masih 22 tahun, besar kemungkinan potensinya akan terus berkembang</p>
-    <li>Asis terbnayak De Bruyne</li><br>
-    <img class="" src="../images/demo/debrun.jpeg" alt="">
-    <p>pemain kaki kaca yang satu ini kerap menjadi pilihan utama guardiola, meskipun rentan cedera de bruyne memiliki visi bermain yang bagus, hal iku mampu membawa city menjuarai liga inggris 2kali berturut- turut pada musim, kemarin saat ini city kualahan menghadapi the reds. total pemain berwajah baby face ini bermain sebanyak 137 dan mencatatkan 56 asis dan pada musim ini sebnyak 10 asis</p>
-    <p>menariknya di daftar top assis muncul bek sayap milik liverpool trent alexander arnorld, dengan 6 asis</p>
-    <li>passes terbnayak van dijk</li>
-    <img class="" src="../images/demo/dik.jpeg" alt="">
-    <p>kapten tim nasional belanda dengan tinggi 193cm berhasil mencatatkan 1,297 operan, ini catatan yang aneh bagi seorang bek.tackle suksesnya hanya 72 %, meskipun mendapat kandidat pemain terbaik, bagi saya vidic tetaplah ada dihati</p>
-
-</ol>
+    <h1>Jadwal bola hari ini adalah</h1>
+    <div class="scaduleKlas">
 
     </div>
   </main>
@@ -99,13 +84,13 @@ html{
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row4" id="sec1" style="background-image:url('../images/demo/backgrounds/cr.png');">
+<div class="wrapper row4" id="sec1" style="background-image:url('images/demo/backgrounds/cr.png');">
   <footer id="footer" class="hoc clear">
 
     <div class="one_quarter" align="center">
       <h6 class="">Tentang saya <i class="fa fa-lg fa-home"></i></h6>
         <article>
-          <img src="../images/demo/saya.jpg" alt="">
+          <img src="images/demo/saya.jpg" alt="">
         </article>
         <ul class="nospace">
         faishal firman hakim <br>
@@ -141,8 +126,8 @@ html{
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.min.js"></script>
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<!-- <script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script> -->
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

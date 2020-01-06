@@ -12,8 +12,11 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>programing</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content="tutorial join mysql">
-<meta name="keywords" content="mysql, php, join">
+<meta name="description" content="tutorial event javascript html">
+<meta name="keywords" content="javascript, event, html">
+<meta name="keywords" content="jquery">
+<meta name="keywords" content="javascript">
+<meta name="keywords" content="Event">
 <meta name="author" content="faisal">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -26,6 +29,15 @@ html{
   scroll-behavior: smooth;
 }
 </style>
+<script type="text/javascript">
+        function copy1() {
+        var copyText = document.getElementById("off");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+        }
+</script>
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -54,7 +66,7 @@ html{
           <li><a class="drop" href="#">programming</a>
             <ul>
             <li><a href="Prog1.html">Query join</a></li>
-            <li><a href="Prog2.html">Mengenal Event javascript</a></li>
+            <li><a href="Prog2.html">Mengenal Event di javascript</a></li>
             <li><a href="Prog3.html">Triger mysql, mengurangi stok barang</a></li>
             </ul>
           </li>
@@ -101,62 +113,47 @@ html{
     <!-- ################################################################################################ -->
     <div class="content three_quarter">
       <!-- ################################################################################################ -->
-      <h1>Query join mysql lebih dari 2 tabel</h1>
-      <img class="imgr borderedbox inspace-5" src="../images/demo/db0.png" alt="">
-      <p>Database mysqli merupakan Database yang sering digunakan oleh para pengembang, baik yang masih pemula, maupun dalam bentuk real projek, mengenai macam macam query mysql yang akan dibahas disini adalah <a href="http://www.mysqltutorial.org/mysql-join/"><b>JOIN</b></a></p>
-      <p>join memiliki 3 macam inner, right dan left, pada tulisan ini akan dibahas mengenai inner join,sebelumnya di bawah ini gambar perbedaannya</p>
-      <img class="imgl borderedbox inspace-5" src="../images/demo/penjelasan.png" alt="">
-      <ol>
-        <li><p>langah pertama buatlah sebuah tabel dengan contoh gambar1, atau copas script dibawah ini, haru satu satu</p><br></li>
-      <textarea readonly rows="6" cols="80"> CREATE TABLE `pengunjung` ( `idPengunjung` int(11) NOT NULL AUTO_INCREMENT, `nama` varchar(20) NOT NULL, `usia` int(11) NOT NULL, `alamat` varchar(20) NOT NULL, PRIMARY KEY(idPengunjung))
-       CREATE TABLE `tiket` ( `idTiket` int(11) NOT NULL AUTO_INCREMENT, `idPengunjung` int(10) NOT NULL, `idJenisTiket` int(11) NOT NULL, `tujuan` varchar(20) NOT NULL, PRIMARY KEY(idTiket))
-      CREATE TABLE `jenistiket` ( `idJenis` int(11) NOT NULL AUTO_INCREMENT, `namaTiket` varchar(20) NOT NULL, `harga` decimal(10) NOT NULL, PRIMARY KEY(idJenis) )</textarea>
-      <li><p>masukkan data tabel pengujung seperti dibawah ini</p></li>
-        <img class="imgl borderedbox inspace-5" src="../images/demo/pengunjung.png" alt="">
-        <li><p>isi tabel jenis</p>  <img class="imgl borderedbox inspace-5" src="../images/demo/jenis.png" alt=""></li>
-        <li>buat relasi di database, pada tabel tiket->structure->relation view <img class="imgl borderedbox inspace-5" src="../images/demo/db1.png" alt=""><p>pertama hubungkan 1 tabel kolom dulu, lalu <b>save</b>, dilanjutkan menghungkan kolom berikutnya</p></li>
-        <li>ketika seluruh kolom sudah terhubung, lalu inputkan data pada tabel tiket <img class="imgl borderedbox inspace-5" src="../images/demo/db2.png" alt=""></li>
-          <p>ketika insert pada kolom pengunjung dan jenis tiket, otomatis akan muncul keterangan dan idnya, tapi yang disimpan nanti berupa id saja.</p>
-          <img class="imgl borderedbox inspace-5" src="../images/demo/db3.png" alt=""><p>setelah data ditambahkan, maka yang disimpan adalah id dari tabel utama <b>tblpengujung</b> dan <b>tbljenistiket</b> </p>
-        <li>lalu bagaimana cara menampilakn <b>nama pengujung</b> dan <b>jenis tiket</b>sedangkan yang disimpan saja berupa id, ini guna query join</li>
-      </ol>
-      <p>gunakan qury dibawah ini </p>
-      <p><hr>SELECT tiket.idTiket, pengunjung.nama <mark>as</mark> 'nama pemesan', jenistiket.namaTiket as 'kategori tiket', tujuan FROM tiket JOIN <b style="color:blue">pengunjung</b> on tiket.idPengunjung = <b style="color:blue">pengunjung</b>.idPengunjung JOIN <b style="color:rgb(16,180,37)">jenistiket</b> on tiket.idJenisiket = <b style="color:rgb(16,180,37)">jenistiket</b>.idJenis <mark>ORDER BY</mark> hargahr <hr></p>
-      <p>maka akan terlihat tampilan seperti dibawah ini :  <img class="imgr borderedbox inspace-5" src="../images/demo/db4.png" alt=""></p>
-    <p><mark>as</mark>: alias digunakan untuk menamai kolom sesuai yang kita inginkan, <mark>order by</mark> : dugunakan untuk mengurutkan disitu order by harga, secara default kalau tidak diset ya mengurutkan terkecil ke terbesar</p>
+      <h1>Trigger AFTER INSERT mysql, mengurangi jumlah stok </h1>
+      <div class="">
+        <p>Pada tulisan kali ini akan membahas tentang, trigger triger adalh storage procedur yang dimiliki mysql, contoh penggunaan trigger adalah</p>
+        <ol>Ini contohnya
+          <li>Before insert</li>
+          <li>After insert</li>
+          <li>Before update</li>
+          <li>after update</li>
+          <li>before delete</li>
+          <li>after delet</li>
+        </ol>
+      </div>
+      <div class="">
+      <p>langsung saja, buatlah dua buah tabel, tbl_prduk</p>
+      <p><img class="imgr borderedbox inspace-5" src="../images/demo/tblProd.png" alt=""></p>
+      <p>dan tbl_beli</p>
+      <p><img class="imgr borderedbox inspace-5" src="../images/demo/beli.png" alt=""></p>
+      </div>
+      <p>sebelumnya pastikan tabel produk dan beli sudah direlasikan, seperti gambar dibawah ini</p>
+        <p><img class="imgr borderedbox inspace-5" src="../images/demo/join.png" alt=""></p>
+        untuk membuat triggernya, klik tabel beli, pada pojok atas kanan more, klik triger, setelah itu dibawah new klik add trigger
+        <br> <br>
+        <img src="../images/demo/trig1.png">
+        setelah itu, isiKan seperti ini, after insert adalah langkah pertama ketika kita sesudah menambah data,
+        <img class="imgr borderedbox inspace-5" src="../images/demo/pek.png" alt="">
+    <div class="">
+      <hr>
+      CREATE TRIGGER `transaksi` AFTER INSERT ON `beli` FOR EACH ROW BEGIN UPDATE produk SET stok = stok - NEW.jumlahBeli WHERE kode_produk = NEW.kode_produk; END
+      <hr>
+    </div>
 
-      <p>lalu bagaimana cara menampilkan ke dalam format php</p><br><p>copy script dibawah ini , lalu save dan refresh dibrowser anda</p>
-      <textarea name="name" rows="20" cols="80">
-        <?php
-          $servername = "localhost";
-          $username = "root";
-          $password = ""; //karena tidak pake password saya kosongi
-          $dbname = "soaldb"; //nama databasemu
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error); //cek koneksi sudah sukses atau belum
-          }
-          echo "Connected successfully <br>";
-
-          $sql = "SELECT tiket.idTiket, pengunjung.nama as 'nama pemesan', jenistiket.namaTiket as 'kategori tiket', tujuan, jenistiket.harga FROM tiket JOIN pengunjung on tiket.idPengunjung = pengunjung.idPengunjung JOIN jenistiket on tiket.idJenisiket = jenistiket.idJenis ORDER BY harga";
-
-          $result = $conn->query($sql);
-
-      if ($result->num_rows > 0) {
-          // output data of each row
-          while($row = $result->fetch_assoc()) {
-              echo "idtiket: " . $row["idTiket"]. " -/nama pengunjung: " . $row["nama pemesan"]."| kategori tiket :" .$row["kategori tiket"] . "| tujuan :". $row["tujuan"] . "harga ".$row["harga"]."<br>";
-          }
-      } else {
-          echo "0 results";
-
-      }
-      $conn->close();
-      ?>
-
-      </textarea>
+      <p>setelah direlasikan, coba insert pada tabel produk, tabl produk ini berguna untuk menyimpan nama produk dan jumlah stok barang</p>
+      <img src="../images/demo/Trig2.png" alt="">
+      <p>pada isi kolom produk sound, stok yang dimasukkan adalah <b style="color:red">10</b></p>
+      <p>setelah itu coba, insert pada tabel <b style="color:rgb(0,238,31)">beli</b>,karena sebelumnya tbl beli dan tbl produk sudah direlasikan, id pada tabel produk di tabel beli, akan muncul nama</p>
+      <p><b style="color:rgb(8,65,112)">Ingat</b>saat memasukkan data produk kita menset stok 10, lalu pada insert beli, kali membeli barang dengan jumlah 4, lalu jalankan</p>
+        <img src="../images/demo/Tum.png" alt="">
+      <p>maka hasil akhir, pada tabel produk, jumlah stok yang tadinya 10, berubah menjadi 6, karena pada saat insert tabel beli, kita memasukkan jumlah barng 4</p>
+        <img src="../images/demo/has.png" alt="">
       <p>sekian trimakasih sudah bersedia membaca, semoga bermanfaat, kalau ada saran masukkan silahkan hubungi dilink tentang saya. trimakasih</p>
-
+<p>thanks</p>
       <div id="comments">
 
       </div>
