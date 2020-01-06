@@ -129,15 +129,15 @@ html{
       <p>langsung saja, buatlah dua buah tabel, tbl_prduk</p>
       <p><img class="imgr borderedbox inspace-5" src="../images/demo/tblProd.PNG" alt=""></p>
       <p>dan tbl_beli</p>
-      <p><img class="imgr borderedbox inspace-5" src="../images/demo/beli.png" alt=""></p>
+      <p><img class="imgr borderedbox inspace-5" src="../images/demo/beli.PNG" alt=""></p>
       </div>
       <p>sebelumnya pastikan tabel produk dan beli sudah direlasikan, seperti gambar dibawah ini</p>
-        <p><img class="imgr borderedbox inspace-5" src="../images/demo/join.png" alt=""></p>
+        <p><img class="imgr borderedbox inspace-5" src="../images/demo/join.PNG" alt=""></p>
         untuk membuat triggernya, klik tabel beli, pada pojok atas kanan more, klik triger, setelah itu dibawah new klik add trigger
         <br> <br>
-        <img src="../images/demo/trig1.png">
+        <img src="../images/demo/trig1.PNG">
         setelah itu, isiKan seperti ini, after insert adalah langkah pertama ketika kita sesudah menambah data,
-        <img class="imgr borderedbox inspace-5" src="../images/demo/pek.png" alt="">
+        <img class="imgr borderedbox inspace-5" src="../images/demo/pekk.png" alt="">
     <div class="">
       <hr>
       CREATE TRIGGER `transaksi` AFTER INSERT ON `beli` FOR EACH ROW BEGIN UPDATE produk SET stok = stok - NEW.jumlahBeli WHERE kode_produk = NEW.kode_produk; END
@@ -149,9 +149,9 @@ html{
       <p>pada isi kolom produk sound, stok yang dimasukkan adalah <b style="color:red">10</b></p>
       <p>setelah itu coba, insert pada tabel <b style="color:rgb(0,238,31)">beli</b>,karena sebelumnya tbl beli dan tbl produk sudah direlasikan, id pada tabel produk di tabel beli, akan muncul nama</p>
       <p><b style="color:rgb(8,65,112)">Ingat</b>saat memasukkan data produk kita menset stok 10, lalu pada insert beli, kali membeli barang dengan jumlah 4, lalu jalankan</p>
-        <img src="../images/demo/Tum.png" alt="">
+        <img src="../images/demo/Tum.PNG" alt="">
       <p>maka hasil akhir, pada tabel produk, jumlah stok yang tadinya 10, berubah menjadi 6, karena pada saat insert tabel beli, kita memasukkan jumlah barng 4</p>
-        <img src="../images/demo/has.png" alt="">
+        <img src="../images/demo/has.PNG" alt="">
       <p>sekian trimakasih sudah bersedia membaca, semoga bermanfaat, kalau ada saran masukkan silahkan hubungi dilink tentang saya. trimakasih</p>
 <p>thanks</p>
       <div id="comments">
