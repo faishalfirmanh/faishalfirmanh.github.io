@@ -12,11 +12,12 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>programing</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content="tutorial event javascript html">
-<meta name="keywords" content="javascript, event, html">
+<meta name="description" content="tutorial ajax mysql">
+<meta name="keywords" content="javascript, mysql, ajax">
 <meta name="keywords" content="jquery">
+<meta name="keywords" content="ajax">
 <meta name="keywords" content="javascript">
-<meta name="keywords" content="Event">
+<meta name="keywords" content="mysql">
 <meta name="author" content="faisal">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -114,45 +115,151 @@ html{
     <!-- ################################################################################################ -->
     <div class="content three_quarter">
       <!-- ################################################################################################ -->
-      <h1>Trigger AFTER INSERT mysql, mengurangi jumlah stok </h1>
-      <div class="">
-        <p>Pada tulisan kali ini akan membahas tentang, trigger triger adalh storage procedur yang dimiliki mysql, contoh penggunaan trigger adalah</p>
-        <ol>Ini contohnya
-          <li>Before insert</li>
-          <li>After insert</li>
-          <li>Before update</li>
-          <li>after update</li>
-          <li>before delete</li>
-          <li>after delet</li>
-        </ol>
-      </div>
-      <div class="">
-      <p>langsung saja, buatlah dua buah tabel, tbl_prduk</p>
-      <p><img class="imgr borderedbox inspace-5" src="../images/demo/tblProd.PNG" alt=""></p>
-      <p>dan tbl_beli</p>
-      <p><img class="imgr borderedbox inspace-5" src="../images/demo/beli.png" alt=""></p>
-      </div>
-      <p>sebelumnya pastikan tabel produk dan beli sudah direlasikan, seperti gambar dibawah ini</p>
-        <p><img class="imgr borderedbox inspace-5" src="../images/demo/join.png" alt=""></p>
-        untuk membuat triggernya, klik tabel beli, pada pojok atas kanan more, klik triger, setelah itu dibawah new klik add trigger
-        <br> <br>
-        <img src="../images/demo/trig1.png">
-        setelah itu, isiKan seperti ini, after insert adalah langkah pertama ketika kita sesudah menambah data,
-        <img class="imgr borderedbox inspace-5" src="../images/demo/pekk.png" alt="">
-    <div class="">
-      <hr>
-      CREATE TRIGGER `transaksi` AFTER INSERT ON `beli` FOR EACH ROW BEGIN UPDATE produk SET stok = stok - NEW.jumlahBeli WHERE kode_produk = NEW.kode_produk; END
-      <hr>
-    </div>
+      <h1 style="color:red">Ajax mysql dengan vanila.js</h1>
 
-      <p>setelah direlasikan, coba insert pada tabel produk, tabl produk ini berguna untuk menyimpan nama produk dan jumlah stok barang</p>
-      <img src="../images/demo/Trig2.PNG" alt="">
-      <p>pada isi kolom produk sound, stok yang dimasukkan adalah <b style="color:red">10</b></p>
-      <p>setelah itu coba, insert pada tabel <b style="color:rgb(0,238,31)">beli</b>,karena sebelumnya tbl beli dan tbl produk sudah direlasikan, id pada tabel produk di tabel beli, akan muncul nama</p>
-      <p><b style="color:rgb(8,65,112)">Ingat</b>saat memasukkan data produk kita menset stok 10, lalu pada insert beli, kali membeli barang dengan jumlah 4, lalu jalankan</p>
-        <img src="../images/demo/Tum.png" alt="">
-      <p>maka hasil akhir, pada tabel produk, jumlah stok yang tadinya 10, berubah menjadi 6, karena pada saat insert tabel beli, kita memasukkan jumlah barng 4</p>
-        <img src="../images/demo/has.png" alt="">
+      <div class="">
+        <p>Pada tulisan kali ini akan membahas tentang ajax(asincronus javascript and XML)</p>
+      </div>
+      <img class="imgr borderedbox inspace-5" src="../images/demo/ajx.jpg" alt="">
+      <div class="">
+      <p>apa yang dapat dilakukan dengan <a href="https://www.w3schools.com/js/js_ajax_intro.asp">ajax,</a> denganajax kita dapat mendambahkan data, tanpa perlu mereload walaman webnay,singkatnya seperti itu. dengan jquery code ajax menjadi lebih simple</p>
+      <p>tapi pada tulisan ini saya menggunakan vanila javascript atau javascript murni, seangkan databaseny dengan <a href="www.mysql.com">mysql</a> kenapa memilih database ini, karena sebagian familiar dengan db ini, pertama buat db seperti ini</p>
+        <img class="imgr borderedbox inspace-4" src="../images/demo/dbd.PNG" alt="">
+      <p>SAYA membuat db dengan nama <a href="https://review.bukalapak.com/mens-style/merk-sepatu-pria-murah-berkualitas-97846" style="color:blue">produk</a>, tabelnya bernama <a href="https://www.suara.com/lifestyle/2019/06/11/183000/sepele-perilaku-berikut-jadi-ciri-ciri-orang-cerdas-lho" style="color:blue">kategori</a></p>
+      <p>boleh dicontoh boleh juga tidak saya tidak memaksa URIP URIPMU AKU GK NGREKEN,hahahah gk lemozzs, setelah db dibaut, buat halaman tambahnya, saya memberi nama tambah.php</p>
+      <textarea readonly name="name" rows="25" cols="80"> <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <hr>
+    <h1>ini adalah post db</h1>
+    <form id="postForm">
+      <input type="text" name="" value="" id="name1">
+      <input type="submit" name="" value="tambah">
+    </form>
+      <!-- <button type="button" name="button" id="button">submitApi</button> -->
+    <script type="text/javascript">
+      document.getElementById("postForm").addEventListener('submit', postNama)
+      function postNama(e){
+        e.preventDefault()
+        var name = document.getElementById("name1").value
+        var param = "nama_kategori="+name
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST','/Db.php', true)
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+        xhr.onload = function(){
+          console.log(this.responseText);
+        }
+        xhr.send(param)
+      }
+
+    </script>
+  </body>
+</html></textarea>
+<div class="" style="font-weight: 900; font-size:25px">
+  <p>setelah selesai, buat koneksi php untuk </p>
+  <p>menghubungkan dengan db yang telah kita buat tadi</p>
+  <p>ini dia soruce codenya</p>
+</div>
+<textarea readonly name="name" rows="25" cols="80">
+  <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "produk"; //default db rest
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully <br>";
+
+if (isset($_POST['nama_kategori'])) {
+$namaKat = mysqli_real_escape_string($conn, $_POST['nama_kategori']);
+echo "POST: ". $_POST['nama_kategori'];
+$query =  "INSERT INTO kategori (nama_kategori) VALUES ('$namaKat')";
+if (mysqli_query($conn, $query)) {
+  echo "  Berhasil ditambah";
+}
+else {
+  echo "Gagal ditambah".mysqli_query($conn);
+}
+
+}
+
+echo "Process...";
+if (isset($_GET['nama_kategori'])) {
+  echo "GET: namamu adalah ".$_GET['nama_kategori'];
+} ?>
+</textarea>
+<p>selanjutnay buat kategori.php, ini file query yang nantinya urlnya akan diletakkan di getData file Ajx5.php</p>
+<textarea readonly name="name" rows="15" cols="80">
+  <?php
+$servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "produk"; //default db rest
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  $query = 'SELECT * FROM kategori';
+  $result = mysqli_query($conn, $query);
+  $kat = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  echo json_encode($kat);
+</textarea>
+<p>selajutlanya halaman untuk listnya script dibawah ini</p>
+<textarea readonly name="name" rows="15" cols="80">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax 2 - Local JSON</title>
+</head>
+<body>
+  <button id="button2">Get Data</button>
+  <br><br>
+  <div id="datanya"></div>
+
+  <script>
+
+    document.getElementById('button2').addEventListener('click', loadUsers);
+    function loadUsers(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET','Kategori.php', true);
+      xhr.onload = function(){
+        if(this.status == 200){
+          var user = JSON.parse(this.responseText);
+          var output = '';
+
+          for(var i in user){
+            output += '<ul>' +
+              '<li>ID: '+user[i].id_kategori+'</li>' +
+              '<li>Name: '+user[i].nama_kategori+'</li>' +
+              '</ul>';
+          }
+
+          document.getElementById('datanya').innerHTML = output;
+        }
+      }
+
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
+</textarea>
+<p>file yang dibutuhnkan kurang lebihnya seperti dibawah ini</p>
+  <img class="imgr borderedbox inspace-4" src="../images/demo/butuh.png" alt="">
+  <p>Hasil demo kurang lebih seperti ini</p>
+  <img class="imgr borderedbox inspace-4" src="../images/demo/demo.gif" alt="">
+
+
+
       <p>sekian trimakasih sudah bersedia membaca, semoga bermanfaat, kalau ada saran masukkan silahkan hubungi dilink tentang saya. trimakasih</p>
 <p>thanks</p>
       <div id="comments">
